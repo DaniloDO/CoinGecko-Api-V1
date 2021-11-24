@@ -1,9 +1,5 @@
 import fetch from "node-fetch";
-
-const coinGecko = {
-    "baseUrl": "https://api.coingecko.com/api/v3",
-    "ping":"/ping"
-};
+import { endPoints } from "../endpoints/endpoints.js";
 
 const getCoinGecko = async (url) => {
     try{
@@ -21,7 +17,11 @@ const getCoinGecko = async (url) => {
 export const landingApiRoutes = (req, res) => {res.json({"action": "api route page"})};
 
 export const testCoinGecko = async (req, res) => {
-    const resData = await getCoinGecko(coinGecko.baseUrl + coinGecko.ping)
-    res.send(resData);
-    
+    let resData = await getCoinGecko(endPoints.baseUrl + endPoints.ping);
+    res.send(resData);  
+};
+
+export const getCoinPrice = async (req, res) => {
+    let resData = await getCoinGecko(endPoints.baseUrl + endPoints.markets);
+    res.send(resData);    
 };
