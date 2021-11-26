@@ -9,4 +9,6 @@ router.get("/test", controlFunctions.testCoinGecko);
 
 router.get("/price_coin", controlFunctions.getCoinPrice);
 
+router.get("/markets_top",controlFunctions.getMarketTop);
+
 export default router;

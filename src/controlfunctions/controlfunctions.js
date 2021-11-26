@@ -14,6 +14,12 @@ const getCoinGecko = async (url) => {
     }
 };
 
+const dataFilterTop10 = async () => {
+    let rawData = await getCoinGecko(endPoints.baseUrl + endPoints.all_markets);
+    const filterData = rawData.filter((value) => value.market_cap_rank <= 10);
+    return filterData;
+};
+
 export const landingApiRoutes = (req, res) => {res.json({"action": "api route page"})};
 
 export const testCoinGecko = async (req, res) => {
@@ -25,3 +31,8 @@ export const getCoinPrice = async (req, res) => {
     let resData = await getCoinGecko(endPoints.baseUrl + endPoints.markets);
     res.send(resData);    
 };
+
+export const getMarketTop = async (req, res) => {
+    let resFilter = await dataFilterTop10();
+    res.send(resFilter);
+}
