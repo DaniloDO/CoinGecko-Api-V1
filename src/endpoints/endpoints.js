@@ -1,3 +1,4 @@
+import { idCoin } from "../controlfunctions/inputfunctions.js";
 
 export const endPoints = {
     "baseUrl": "https://api.coingecko.com/api/v3",

@@ -11,4 +11,6 @@ router.get("/price_coin", controlFunctions.getCoinPrice);
 
 router.get("/markets_top",controlFunctions.getMarketTop);
 
+router.get("/resume_coin",controlFunctions.getResumeCoin);
+
 export default router;
