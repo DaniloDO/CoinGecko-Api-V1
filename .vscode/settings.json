@@ -1,0 +1,17 @@
+{
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "default"
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 3306,
+            "driver": "MySQL",
+            "name": "Rest_API_connection",
+            "database": "TestDataBase",
+            "username": "newuser",
+            "password": "password"
+        }
+    ]
+}
